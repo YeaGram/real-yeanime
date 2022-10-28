@@ -6,7 +6,7 @@ import { _GetTopUpcomingAnimes } from "./getAnime";
 
 export default function GetUpcomingSeasonsAnime() {
   const [Loading, GetTopUpcomingAnime] = _GetTopUpcomingAnimes(15000);
-  // if (Loading) return <LoadingState />;
+  if (Loading) return <LoadingState />;
   return (
     <section className="container mx-auto px-7 md:px-0 lg:px-7 mt-10">
       <div className="my-4 flex flex-col md:flex-row md:items-center container md:px-14 lg:px-0">
@@ -16,7 +16,7 @@ export default function GetUpcomingSeasonsAnime() {
         </p>
       </div>
       <Card dataJson={GetTopUpcomingAnime} />
-      <div className="text-center">more</div>
+
       {/* <div className="flex w-full justify-center flex-wrap xl:flex-nowrap gap-3">
         {GetTopUpcomingAnime.map((item, index) => {
           return (

@@ -7,7 +7,7 @@ export default function Card({ dataJson, variant }) {
     regular: "regular",
   };
   return variant === variants.hover ? (
-    <div className="flex w-full justify-center flex-wrap xl:flex-nowrap gap-3">
+    <div className="flex w-full justify-center flex-wrap xl:flex-nowrap gap-3 ">
       {dataJson.map((item, index) => {
         return (
           <div
@@ -35,7 +35,7 @@ export default function Card({ dataJson, variant }) {
       })}
     </div>
   ) : (
-    <div className="flex w-full justify-center flex-wrap xl:flex-nowrap gap-3">
+    <div className="flex w-full justify-center flex-wrap xl:flex-nowrap gap-3 animate-[fadein_1s_ease]">
       {dataJson.map((item, index) => {
         return (
           <div

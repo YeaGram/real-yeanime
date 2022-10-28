@@ -83,6 +83,9 @@ export const _GetRandomAnimes = (time) => {
   useEffect(() => {
     setTimeout(() => {
       SetLoading(false);
+      fetch(`${RandomAnime}`)
+        .then((res) => res.json())
+        .then((data) => SetGetRandomAnime(data.data));
       setInterval(() => {
         fetch(`${RandomAnime}`)
           .then((res) => res.json())

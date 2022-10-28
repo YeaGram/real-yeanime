@@ -10,17 +10,17 @@ export default function RandomAnime() {
 
   return (
     GetRandomAnime && (
-      <section className="my-20 max-w-7xl container mx-auto sm:px-14  ">
-        <div className="mx-auto h-full relative bg-gradient-to-tr from-primary/30 dark:via-black via-white/0 dark:border-2 border-primary/30">
+      <section className="my-20 max-w-7xl container mx-auto sm:px-14 ">
+        <div className="mx-auto h-full relative bg-gradient-to-tr pt-5  from-primary/30 dark:via-black via-white/0 dark:border-2 border-primary/30">
           <div className="flex flex-col items-center sm:items-start sm:py-7 sm:px-10 gap-4 justify-center md:flex-row">
             {/* Images */}
-            <div className="min-w-[250px] flex-1 mx-auto max-w-sm relative aspect-[17/24] ">
+            <div className="min-w-[250px]  flex-1 mx-auto max-w-sm relative aspect-[17/24] animate-[fadein_1s_ease]">
               <Image
                 alt={GetRandomAnime.title}
                 src={GetRandomAnime.images.webp.large_image_url}
                 fill
                 sizes="100vw"
-                className="object-contain drop-shadow-lg"
+                className="object-contain drop-shadow-lg transition-all"
               />
             </div>
 
@@ -52,6 +52,11 @@ export default function RandomAnime() {
                       </p>
                     </div>
                   </div>
+                </div>
+                <div className="text-right pb-7">
+                  <NavItem target={GetRandomAnime.url} blank={true}>
+                    Details
+                  </NavItem>
                 </div>
               </div>
             </div>

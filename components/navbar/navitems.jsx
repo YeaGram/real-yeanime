@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NavItem({ children, variants, type }) {
+export default function NavItem({ children, variants, type, target, blank }) {
   const variant = {
     fill: "opacity-100",
     fade: "opacity-50 hover:opacity-100",
@@ -23,7 +23,9 @@ export default function NavItem({ children, variants, type }) {
           variants ? (variants == "fade" ? variant.fade : variant.fill) : ""
         }`}
       >
-        <Link href="/">{children}</Link>
+        <Link href={target ? target : "/"} target={blank ? "_blank" : "_self"}>
+          {children}
+        </Link>
       </div>
     );
 }

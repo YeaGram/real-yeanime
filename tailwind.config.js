@@ -17,6 +17,12 @@ module.exports = {
       transitionTimingFunction: {
         uwis: "cubic-bezier(.64,.46,.13,.95)",
       },
+      keyframes: {
+        fadein: {
+          "0%": { transform: "translateY(100px)", opacity: "0" },
+          "100%": { transform: "translateY(0px)" },
+        },
+      },
     },
   },
   plugins: [],

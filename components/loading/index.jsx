@@ -1,7 +1,7 @@
 import { AiOutlineLoading } from "react-icons/ai";
 export default function LoadingState({ title }) {
   return (
-    <li className="flex-1 block ">
+    <li className="flex-1 block w-full ">
       <div>
         <h3 className="font-SourceSans text-xl font-bold">{title}</h3>
         <div className="text-sm font-Poppins w-fit">

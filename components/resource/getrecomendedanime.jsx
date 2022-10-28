@@ -10,7 +10,9 @@ export default function GetRecomendedAnime() {
   return (
     <>
       <div className="py-5 ml-5">
-        <h1 className="font-Poppins text-5xl font-semibold">Recomended</h1>
+        <h1 className="font-Poppins text-4xl sm:text-5xl  font-semibold">
+          Recomended
+        </h1>
       </div>
       <div className="overflow-x-scroll overflow-y-hidden grid grid-flow-col gap-4 w-full snap-x snap-mandatory">
         {GetTopAnime.map((items) => {
