@@ -17,7 +17,11 @@ export default function GetTopAiringAnime({ title, children, target, time }) {
           <div className="text-sm font-Poppins ml-2 mt-2">
             {GetTopAiringAnime.map((anime, index) => {
               return (
-                <NavItem variants="fade" key={anime.mal_id}>
+                <NavItem
+                  variants="fade"
+                  key={anime.mal_id}
+                  target={`/anime/${anime.mal_id}`}
+                >
                   <div className="inline-block">{index + 1}.</div> {anime.title}
                 </NavItem>
               );
@@ -25,7 +29,7 @@ export default function GetTopAiringAnime({ title, children, target, time }) {
           </div>
         </div>
         <div className="text-sm text-right">
-          <NavItem variants="fill" target={target}>
+          <NavItem variants="fill" target={`/`}>
             More..
           </NavItem>
         </div>

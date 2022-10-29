@@ -5,7 +5,6 @@ export default function NavItem({ children, variants, type, target, blank }) {
     fill: "opacity-100",
     fade: "opacity-50 hover:opacity-100",
   };
-
   if (type === "regular") {
     return (
       <div
@@ -23,7 +22,10 @@ export default function NavItem({ children, variants, type, target, blank }) {
           variants ? (variants == "fade" ? variant.fade : variant.fill) : ""
         }`}
       >
-        <Link href={target ? target : "/"} target={blank ? "_blank" : "_self"}>
+        <Link
+          href={target !== undefined ? target : "/"}
+          target={blank ? "_blank" : "_self"}
+        >
           {children}
         </Link>
       </div>

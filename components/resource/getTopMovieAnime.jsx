@@ -15,7 +15,11 @@ export default function GetTopMovieAnime({ title, children, target, time }) {
           <div className="text-sm font-Poppins ml-2 mt-2">
             {GetTopMovieAnime.map((anime, index) => {
               return (
-                <NavItem variants="fade" key={anime.mal_id}>
+                <NavItem
+                  variants="fade"
+                  key={anime.mal_id}
+                  target={`/anime/${anime.mal_id}`}
+                >
                   <div className="inline-block">{index + 1}.</div> {anime.title}
                 </NavItem>
               );

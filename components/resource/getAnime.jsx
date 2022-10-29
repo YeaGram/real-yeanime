@@ -77,6 +77,22 @@ export const _GetTopMovieAnimes = (time) => {
 
   return [Loading, GetTopMovieAnime];
 };
+
+export const _GeAnimeDetails = (time, id) => {
+  const [GetAnimeDetails, SetGetAnimeDetails] = useState();
+  const [Loading, SetLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      SetLoading(false);
+      fetch(`https://api.jikan.moe/v4/anime/${id}/full`)
+        .then((res) => res.json())
+        .then((data) => SetGetAnimeDetails(data.data));
+    }, time);
+  }, []);
+
+  return [Loading, GetAnimeDetails];
+};
+
 export const _GetRandomAnimes = (time) => {
   const [GetRandomAnime, SetGetRandomAnime] = useState();
   const [Loading, SetLoading] = useState(true);

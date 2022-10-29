@@ -29,7 +29,7 @@ export default function GetRecomendedAnime() {
                 className="object-cover z-10"
               />
               <div className="absolute bottom-0 transition-all justify-center items-center flex z-20 w-full h-0 group-hover:h-full bg-gradient-to-t dark:from-black dark:to-black/40 from-white to-white/40 group">
-                <Link href={items.url} target="_blank">
+                <Link href={`/anime/${items.mal_id}`}>
                   <div className="px-20 font-semibold font-SourceSans text-3xl opacity-0 group-hover:opacity-100">
                     <h3>{items.title}</h3>
                   </div>

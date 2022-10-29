@@ -54,7 +54,7 @@ export default function RandomAnime() {
                   </div>
                 </div>
                 <div className="text-right pb-7">
-                  <NavItem target={GetRandomAnime.url} blank={true}>
+                  <NavItem target={`/anime/${GetRandomAnime.mal_id}`}>
                     Details
                   </NavItem>
                 </div>

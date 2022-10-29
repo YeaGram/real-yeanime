@@ -4,7 +4,7 @@ import NavItem from "../navbar/navitems";
 export default function Footers() {
   return (
     <div className="pt-20">
-      <footer className="w-full shadow-[0px_-10px_10px_rgba(0,0,0,0.1)] relative z-0 ">
+      <footer className="w-full shadow-[0px_-10px_10px_rgba(0,0,0,0.1)] relative z-npm0 ">
         <div className="absolute h-full pt-20 w-[10%] max-w-[50px] box-content bottom-0 z-0 bg-primary rounded-tr-full shadow-lg"></div>
         <div className="absolute h-full w-32 top-0 -z-10 bg-primary"></div>
         <div className="w-full dark:bg-black/50 py-20">
