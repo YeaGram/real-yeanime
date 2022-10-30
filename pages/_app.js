@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import { useState, useEffect } from "react";
+import { Loading } from "../components/loading/mainloading";
 
 function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
@@ -11,7 +12,12 @@ function MyApp({ Component, pageProps }) {
   if (!showChild) {
     return null;
   }
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Loading />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;

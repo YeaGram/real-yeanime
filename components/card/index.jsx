@@ -36,7 +36,7 @@ export default function Card({ dataJson, variant }) {
       })}
     </div>
   ) : (
-    <div className="flex w-full justify-center flex-wrap xl:flex-nowrap gap-3 animate-[fadein_1s_ease]">
+    <div className="flex w-full justify-center flex-wrap gap-3 animate-[fadein_1s_ease]">
       {dataJson.map((item, index) => {
         return (
           <div

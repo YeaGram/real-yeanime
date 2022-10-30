@@ -53,7 +53,7 @@ export default function NavigationBar() {
                   <NavItem variants="fade">About</NavItem>
                 </div>
                 <div className="flex gap-2 w-full md:justify-evenly">
-                  <NavItem variants="fill">
+                  <NavItem variants="fill" target="/search">
                     <FaSearch />
                   </NavItem>
                   <ThemeBtn />
