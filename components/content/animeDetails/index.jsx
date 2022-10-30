@@ -76,9 +76,11 @@ export default function AnimeDetailContent({ animeid }) {
                     <Dproperty prop={"Genre"}>
                       {GetAnimeDetails.genres.map((item, index) => {
                         return (
-                          <div className="inline mx-1" key={index}>
-                            {item.name}
-                          </div>
+                          <>
+                            <div className="inline mx-1" key={index}>
+                              {item.name}
+                            </div>
+                          </>
                         );
                       })}
                     </Dproperty>
@@ -89,9 +91,11 @@ export default function AnimeDetailContent({ animeid }) {
                     <Dproperty prop={"Producer"}>
                       {GetAnimeDetails.producers.map((item, index) => {
                         return (
-                          <div className="inline  mx-1" key={index}>
-                            {item.name}
-                          </div>
+                          <>
+                            <div className="inline  mx-1" key={index}>
+                              {item.name}
+                            </div>
+                          </>
                         );
                       })}
                     </Dproperty>
