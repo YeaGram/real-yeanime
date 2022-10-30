@@ -6,7 +6,6 @@ import { _GetTopAnimes } from "./getAnime";
 
 export default function GetRecomendedAnime() {
   const [Loading, GetTopAnime] = _GetTopAnimes(0, 10);
-
   return (
     <>
       <div className="py-5 ml-5">
