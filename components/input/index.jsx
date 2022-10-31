@@ -5,8 +5,8 @@ export default function InputArea({ handleinput }) {
 
   return (
     <div className="container max-w-2xl mx-auto my-10">
-      <div className="rounded-xl transition-all  focus-within:shadow-[0px_10px_20px_rgba(130,0,0,0.5)] ">
-        <div className="rounded-xl border-primary flex items-center  border-4 relative pr-9 shadow-[0px_6px_0px_rgb(130,0,0)] transition-all focus-within:-translate-y-1">
+      <div className="rounded-xl transition-all  focus-within:shadow-[0px_15px_50px_10px_rgba(130,0,0,0.8)] ">
+        <div className="rounded-xl border-primary flex items-center border-4 relative pr-14 shadow-[0px_6px_0px_rgb(130,0,0)] transition-all focus-within:-translate-y-1">
           <input
             type="search"
             name="Search"

@@ -2,7 +2,7 @@ import Image from "next/image";
 import NavItem from "../navbar/navitems";
 import Link from "next/link";
 
-export default function Card({ dataJson, variant }) {
+export default function Card({ dataJson, variant, blank }) {
   const variants = {
     hover: "hover",
     regular: "regular",
@@ -43,7 +43,10 @@ export default function Card({ dataJson, variant }) {
             key={index}
             className="flex-1 md:flex-none lg:flex-1 md:w-[200px] min-w-[150px] "
           >
-            <NavItem target={`/anime/${item.mal_id}`}>
+            <NavItem
+              target={`/anime/${item.mal_id}`}
+              blank={blank ? true : false}
+            >
               <div className="relative w-full aspect-[17/24]">
                 <Image
                   src={item.images.webp.image_url}

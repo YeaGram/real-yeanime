@@ -9,24 +9,20 @@ import LoadingState from "../components/loading";
 
 export default function Search() {
   const [searchQuery, SetSearchQuery] = useState(false);
+  const [title, SetTitle] = useState("Search");
   const [noInput, setNoInput] = useState(false);
   const [animes, setAnimes] = useState(false);
+  const [type, setType] = useState("anime");
   const [loading, setLoading] = useState(false);
 
-  const handleNoInput = () => {
-    setLoading(true);
-    setNoInput(searchQuery == "" ? false : true);
-    setLoading(false);
-  };
-
-  const handleinput = (callback) => {
+  const inputQuery = (callback) => {
     const data = callback;
     SetSearchQuery(data);
   };
 
   const GetAnime = () => {
     setLoading(true);
-    fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`)
+    fetch(`https://api.jikan.moe/v4/${type}?q=${searchQuery}`)
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
@@ -34,12 +30,22 @@ export default function Search() {
       });
   };
 
-  console.log(loading);
+  function startSearch() {
+    SetTitle(`Results : ${searchQuery}`);
+    if (searchQuery === "" || !searchQuery) {
+      console.log("No Input");
+      setNoInput(true);
+    } else {
+      GetAnime();
+      setNoInput(false);
+    }
+  }
 
+  console.log(animes);
   return (
     <div className="">
       <Head>
-        <title>Search</title>
+        <title>{`${title}`}</title>
       </Head>
       <NavigationBar />
       <div className="mt-32">
@@ -51,11 +57,11 @@ export default function Search() {
             Search
           </h2>
         </div>
-        <div className="flex flex-col items-end max-w-2xl mx-auto ">
-          <InputArea handleinput={handleinput} />
+        <div className="flex flex-col items-end max-w-2xl mx-auto container px-5 md:px-0">
+          <InputArea handleinput={inputQuery} />
           <div
-            onClick={searchQuery && noInput ? GetAnime : handleNoInput}
-            className="px-7 py-1 ring-2 ring-primary w-fit focus-within:ring-offset-2 focus-within:bg-primary focus-within:text-inherit hover:bg-primary hover:border-none transition-all hover:text-inherit text-primary"
+            onClick={startSearch}
+            className="px-7 py-1 ring-2 ring-primary w-fit focus-within:ring-offset-2 focus-within:bg-primary focus-within:text-inherit dark:ring-offset-black hover:bg-primary hover:border-none transition-all hover:text-inherit text-primary"
           >
             <button className=" text-center font-Poppins font-semibold ">
               Find
@@ -64,23 +70,22 @@ export default function Search() {
         </div>
       </div>
       <div className="container w-fit mx-auto my-10">
-        {loading ? (
-          <LoadingState />
-        ) : noInput ? (
-          animes && (
+        {noInput ? (
+          <div>
+            <h1>Write something 😒</h1>
+          </div>
+        ) : loading ? (
+          loading && <LoadingState />
+        ) : animes ? (
+          animes.data.length > 0 ? (
+            <Card dataJson={animes.data} blank={true} />
+          ) : (
             <div>
-              <h2 className="text-2xl font-poppins text-primary">
-                {animes.data.length > 0 ? (
-                  ""
-                ) : (
-                  <div>no data! Please check your input</div>
-                )}
-              </h2>
-              <Card dataJson={animes.data} />
+              <h1>No Data Received, Please Check Your Input!</h1>
             </div>
           )
         ) : (
-          <h2 className="text-2xl font-poppins text-primary">No Input!</h2>
+          ""
         )}
       </div>
       <Footers />
