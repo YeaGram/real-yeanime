@@ -23,9 +23,6 @@ export default function TopAnime() {
       .then((data) => setAnime(data));
   }, [CheckedAnimeType, CheckedAnimeFilter]);
 
-  console.log(CheckedAnimeType);
-  console.log(Anime);
-
   return (
     Anime && (
       <div className="">

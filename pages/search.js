@@ -41,7 +41,6 @@ export default function Search() {
     }
   }
 
-  console.log(animes);
   return (
     <div className="">
       <Head>
