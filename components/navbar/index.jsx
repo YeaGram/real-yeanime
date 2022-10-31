@@ -43,14 +43,22 @@ export default function NavigationBar() {
           >
             <div className="w-fit md:w-full md:flex md:justify-between ">
               <div className="flex gap-4 flex-col md:flex-row md:items-center md:ml-5">
-                <NavItem variants="fade">Top Anime</NavItem>
-                <NavItem variants="fade">Random Anime</NavItem>
-                <NavItem variants="fade">Manga</NavItem>
+                <NavItem variants="fade" target="/anime/topanime">
+                  Top Anime
+                </NavItem>
+                {/* <NavItem variants="fade" target="#randomAnime">
+                  Random Anime
+                </NavItem> */}
+                {/* <NavItem variants="fade">Manga</NavItem> */}
               </div>
               <div className="flex gap-7 flex-col md:mt-0 mt-10 md:flex-row md:items-center">
                 <div className="flex gap-2">
-                  <NavItem variants="fade">Home</NavItem>
-                  <NavItem variants="fade">About</NavItem>
+                  <NavItem variants="fade" target="/">
+                    Home
+                  </NavItem>
+                  <NavItem variants="fade" target="/about">
+                    About
+                  </NavItem>
                 </div>
                 <div className="flex gap-2 w-full md:justify-evenly">
                   <NavItem variants="fill" target="/search">

@@ -41,13 +41,13 @@ export default function Card({ dataJson, variant, blank }) {
         return (
           <div
             key={index}
-            className="flex-1 md:flex-none lg:flex-1 md:w-[200px] min-w-[150px] "
+            className="flex-1 md:flex-none lg:flex-1 max-w-[300px] md:w-[200px] min-w-[150px] "
           >
             <NavItem
               target={`/anime/${item.mal_id}`}
               blank={blank ? true : false}
             >
-              <div className="relative w-full aspect-[17/24]">
+              <div className="relative w-full  aspect-[17/24]">
                 <Image
                   src={item.images.webp.image_url}
                   fill

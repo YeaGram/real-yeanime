@@ -22,12 +22,12 @@ export default function Footers() {
             <div className="flex-1 flex flex-col justify-center items-center md:mt-0 mt-10">
               <div className="flex gap-3 font-bold">
                 <div>
-                  <NavItem>About</NavItem>
-                  <NavItem>Home</NavItem>
+                  <NavItem target="/about">About</NavItem>
+                  <NavItem target="/">Home</NavItem>
                 </div>
                 <div>
-                  <NavItem>Anime</NavItem>
-                  <NavItem>Manga</NavItem>
+                  <NavItem target="/">Anime</NavItem>
+                  <NavItem target="/404">Manga</NavItem>
                 </div>
               </div>
               <div className="mt-5 text-xm">

@@ -10,7 +10,10 @@ export default function RandomAnime() {
 
   return (
     GetRandomAnime && (
-      <section className="my-20 max-w-7xl container mx-auto sm:px-14 ">
+      <section
+        id="randomAnime"
+        className="my-20 max-w-7xl container mx-auto sm:px-14 "
+      >
         <div className="mx-auto h-full relative bg-gradient-to-tr pt-5  from-primary/30 dark:via-black via-white/0 dark:border-2 border-primary/30">
           <div className="flex flex-col items-center sm:items-start sm:py-7 sm:px-10 gap-4 justify-center md:flex-row">
             {/* Images */}
